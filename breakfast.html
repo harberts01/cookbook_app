@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Your Virtual Cookbook!</title>
+</head>
+<body class="container">
+    <div class="card">
+        <div class="card-body text-center bg-success">
+            <h1 class="text-decoration-underline text-white">Breakfast Recipes</h1>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="new-recipe">Recipe</label>
+                        <input type="text" class="form-control" id="recipe-name" placeholder="Name Your Recipe">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="num-of-ingredients">Number of Ingredients</label>
+                        <input type="number" min="1" class="form-control" id="num-of-ingredients">
+                    </div>                
+                </div>
+                <div class="col-sm">                 
+                    <div class="form-group">
+                        <label for="prep-time">Total Prep Time (in Hours)</label>
+                        <input type="number" min="0" class="form-control" id="prep-time">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="servings">Servings</label>
+                        <input type="number" class="form-control" id="servings">
+                    </div>
+                </div>
+            </div>
+            
+            <br>
+        <div>
+            <button id="createRowButton" class="btn btn-success form-control">Create</button>
+        </div>
+    </div>
+</div>
+
+<table id="list" class="table table-dark table-striped">
+    <tr>
+        <th>Name</th>
+        <th># Of Ingredients</th>
+        <th>Total Prep Time</th>
+        <th>Serving Size</th>
+        <th>Edit Recipe</th>
+        <th>Open Recipe</th>
+    </tr>
+</table>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-target="#staticBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="openRecipeHeader"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="input-group mb-3">
+
+                <input type="text" class="form-control" id="ingredientName" placeholder="Ingredient Name">
+
+                <input type="number" class="form-control" aria-label="Text input with dropdown button" Placeholder="Amount">
+
+                <select class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <option>Cups</option>
+                  <option>Tablespoons</option>
+                  <option>Teaspoons</option>
+                  <option>Ounces</option>
+                  <option>Pints</option>
+                  <option>Quarts</option>
+                  <option>Small</option>
+                  <option>Medium</option>
+                  <option>Large</option>
+                </select>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Add Ingredient</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<script src="storageSelector.js"></script>
+<script src="script.js"></script>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
